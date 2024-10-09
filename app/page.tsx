@@ -15,7 +15,7 @@ export default function Home() {
 
         <Section title="Calendar notification" description="Still figuring out the layout of this thing. Inspired by uilabs.dev."><CalendarNotification /></Section>
 
-        <Section title="Framer motion test" description="Trying to get Framer motion to work.">
+        <Section title="Framer motion button" description="Using whileHover and whileTap.">
           <MotionTest />
         </Section>
 
