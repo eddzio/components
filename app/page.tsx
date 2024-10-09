@@ -11,12 +11,12 @@ export default function Home() {
 
 {/* Page header */}
         <div className="flex flex-col gap-1">
-          <h1>Playground 2</h1>
+          <h1>Components.fun</h1>
           <h2>A space where I explore UI concepts</h2>
           <p className="label-secondary">Made by <a href="https://twitter.com/eddzio">@eddzio</a></p>
         </div>   
 
-        <Section title="Component 1" description="Still figuring out the layout of this thing.">
+        <Section title="Calendar notification" description="Still figuring out the layout of this thing. Inspired by uilabs.dev.">
           <CalendarNotification />
         </Section>
 
