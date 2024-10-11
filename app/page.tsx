@@ -50,11 +50,7 @@ export default function Home() {
             </Section>
           </motion.div>
           
-          <motion.div
-          variants={itemVariants}
-          >
-            <Section title="Calendar notification" description="Still figuring out the layout of this thing. Inspired by uilabs.dev."><CalendarNotification /></Section>
-          </motion.div >
+ 
 
       </div>
      
