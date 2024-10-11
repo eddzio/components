@@ -14,7 +14,7 @@ export default function Home() {
     opacity: 1, 
     y: 0, 
     transition: {
-      delayChildren: 0.4,
+      delayChildren: 0.3,
       staggerChildren: 0.2,
     }, 
     },
@@ -26,17 +26,18 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col justify-center bg-[background-color:var(--background)] font-[family-name:var(--font-geist-sans)] px-4">
+    <motion.div 
+    variants={containerVariants}
+    initial="hidden"
+    animate="show"
+    className="flex flex-col justify-center bg-[background-color:var(--background)] font-[family-name:var(--font-geist-sans)] px-4">
           
       <main className="flex flex-col w-full max-w-4xl gap-8 mx-auto">
 
       <PageHeader />
 
-{/* content container starts */}
-      <motion.div 
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
+
+      <div
       className="flex flex-col gap-16 py-8"
       >
           <motion.div
@@ -53,12 +54,10 @@ export default function Home() {
             <Section title="Calendar notification" description="Still figuring out the layout of this thing. Inspired by uilabs.dev."><CalendarNotification /></Section>
           </motion.div >
 
-
-
-      </motion.div>
+      </div>
      
       </main>
      
-    </div>
+    </motion.div>
   );
 }
