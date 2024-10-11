@@ -1,13 +1,11 @@
 "use client"
 
-// Framer motion
 import { motion } from "framer-motion";
-
 
 import Section from "./components/section";
 import CalendarNotification from "./components/calendarNotification";
 import PageHeader from "./components/pageHeader";
-import MotionTest from "./components/motionTest";
+import { GrowingButton } from "./components/growingButton";
 export default function Home() {
 
   const containerVariants = {
@@ -41,20 +39,21 @@ export default function Home() {
       animate="show"
       className="flex flex-col gap-16 py-8"
       >
-
+          <motion.div
+          variants={itemVariants}
+          >
+            <Section title="Framer motion button" description="Using whileHover and whileTap.">
+              <GrowingButton />
+            </Section>
+          </motion.div>
+          
           <motion.div
           variants={itemVariants}
           >
             <Section title="Calendar notification" description="Still figuring out the layout of this thing. Inspired by uilabs.dev."><CalendarNotification /></Section>
           </motion.div >
 
-          <motion.div
-          variants={itemVariants}
-          >
-            <Section title="Framer motion button" description="Using whileHover and whileTap.">
-              <MotionTest />
-            </Section>
-          </motion.div>
+
 
       </motion.div>
      
