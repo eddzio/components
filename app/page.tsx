@@ -6,6 +6,8 @@ import Section from "./components/section";
 import CalendarNotification from "./components/calendarNotification";
 import PageHeader from "./components/pageHeader";
 import { GrowingButton } from "./components/growingButton";
+import { QuickMenu } from "./components/quickMenu";
+
 export default function Home() {
 
   const containerVariants = {
@@ -43,8 +45,8 @@ export default function Home() {
           <motion.div
           variants={itemVariants}
           >
-            <Section title="Framer motion button" description="Using whileHover and whileTap.">
-              <GrowingButton />
+            <Section title="Quick menu" description="A concept for quicly jumping around a web app. Made with Framer Motion, Tailwind and React.">
+              <QuickMenu />
             </Section>
           </motion.div>
           

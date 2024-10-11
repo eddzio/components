@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 
 const variants = {
     narrow: {width: "128px"},
-    wide: {width: "200px"},
+    wide: {width: "200px", height: "92px"},
+    transition: {duration: 2}
 }
 
 export const GrowingButton = () => {
@@ -21,9 +22,12 @@ export const GrowingButton = () => {
         variants={variants}
         onClick={() => setIsWide(isWide => !isWide)}
 
-            className="bg-stone-900 hover:bg-stone-800 shadow-lg shadow-stone-950/30 rounded-full px-8 py-3 cursor-pointer"
+            className="
+            bg-stone-900 shadow-lg shadow-stone-950/30 rounded-full px-8 py-3 
+            hover:bg-stone-800 transition-colors duration-150
+            cursor-pointer"
         >  
-            <p className="text-stone-50 text-2xl mx-auto text-center">Press</p>
+            <p className="text-stone-50 text-2xl mx-auto text-center place-content-center h-full  select-none">Press</p>
         </motion.div>
 
     )
