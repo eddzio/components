@@ -2,9 +2,6 @@
 
 // Framer motion
 import { motion } from "framer-motion";
-import { div } from "framer-motion/client";
-import { useInView } from 'framer-motion';
-import { animate, stagger } from "framer-motion";
 
 
 import Section from "./components/section";
@@ -16,9 +13,9 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-col justify-center min-h-screen bg-[background-color:var(--background)] font-[family-name:var(--font-geist-sans)] px-6">
+    <div className="flex flex-col justify-center bg-[background-color:var(--background)] font-[family-name:var(--font-geist-sans)] px-4">
           
-      <main className="flex flex-col w-full max-w-4xl gap-8 row-start-2 mx-auto">
+      <main className="flex flex-col w-full max-w-4xl gap-8 mx-auto">
 
       <PageHeader />
 
