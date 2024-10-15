@@ -1,12 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion";
-
-import Section from "./components/section";
-import CalendarNotification from "./components/calendarNotification";
 import PageHeader from "./components/pageHeader";
-import { GrowingButton } from "./components/growingButton";
+import Section from "./components/section";
 import { QuickMenu } from "./components/quickMenu";
+import { ProgressiveCard } from "./components/progressiveCard";
 
 export default function Home() {
 
@@ -47,6 +45,14 @@ export default function Home() {
           >
             <Section title="Quick menu" description="A concept for quicly jumping around a web app. Made with Framer Motion, Tailwind and React.">
               <QuickMenu />
+            </Section>
+          </motion.div>
+
+          <motion.div
+          variants={itemVariants}
+          >
+            <Section title="Progressive card" description="A two-step dialog that changes to accommodate different types of input. Made with Framer Motion, Tailwind and React.">
+              <ProgressiveCard />
             </Section>
           </motion.div>
           
