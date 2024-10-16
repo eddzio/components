@@ -26,11 +26,12 @@ export const ProgressiveCard = () => {
     
 
     return (
-        <motion.div className="bg-card rounded-xl shadow-md border border-stone-200 dark:border-stone-800 w-full max-w-[400px]">
-            <div className="flex flex-col gap-2 items-left">
-                <div className="p-3 w-full border-b border-stone-200 dark:border-stone-700"><h1 className="text-base font-normal tracking-tight">Create a new channel</h1></div>
+        <motion.div layout className="bg-card rounded-xl shadow-md border border-stone-200 dark:border-stone-700 w-full max-w-[400px]">
+            <div className="flex flex-col gap-0 items-left">
+                <div className="p-3 w-full"><h1 className="text-base font-normal tracking-tight">Create a new channel</h1></div>
                 
-                <div className="p-3 w-full flex flex-col gap-4 overflow-hidden transition-all duration-300">    
+                <motion.div 
+                className="p-3 w-full flex flex-col gap-2 overflow-hidden">    
                     <AnimatePresence mode="wait">
                         {showFirstInput ? (
                             <motion.div
@@ -38,6 +39,7 @@ export const ProgressiveCard = () => {
                                 key="first"
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -20, transition: { duration: 0.1 } }}
                                 transition={{ duration: 0.1 }}
                             >
                                 <TextInput label="First" placeholder="Type something" />
@@ -47,7 +49,7 @@ export const ProgressiveCard = () => {
                                 key="second"
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
-
+                                exit={{ opacity: 0, x: 20, transition: { duration: 0.1 } }}
                                 transition={{ duration: 0.1 }}
                             >
                                 <div className="flex flex-col gap-4">
@@ -57,7 +59,7 @@ export const ProgressiveCard = () => {
                             </motion.div>
                         )}
                     </AnimatePresence>
-                </div>
+                </motion.div>
 
                 
                 <div className="flex justify-start m-3 gap-3">
@@ -69,6 +71,7 @@ export const ProgressiveCard = () => {
                     <ButtonPrimary 
                         label="Continue" 
                         onClick={handleContinueClick}
+                        
                     />
                 
                 </div>                

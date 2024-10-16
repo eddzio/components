@@ -7,7 +7,7 @@ export const ButtonPrimary = ({ label, onClick }: { label: string, onClick: () =
         <div>
             <button 
             onClick={onClick}
-            className="px-3 py-1.5 rounded-lg bg-stone-950 hover:bg-stone-900 text-white text-sm">
+            className="px-3 py-1.5 rounded-lg bg-stone-950 hover:bg-stone-900 text-white text-sm transition-colors duration-150">
                 {label}
             </button>
         </div>
