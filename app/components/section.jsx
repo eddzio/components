@@ -22,7 +22,7 @@ const Section = ({title, description, children}) => {
             <div className="
             flex items-center justify-center border border-dashed border-color 
             h-[400px] w-full place-content-center rounded-[12px]
-            bg-stone-100 dark:bg-stone-950
+            bg-stone-100 dark:bg-stone-950 px-2
             ">
                 {children}
             </div>
