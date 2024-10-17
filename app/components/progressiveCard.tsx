@@ -13,22 +13,30 @@ export const ProgressiveCard = () => {
 
     const handleContinueClick = () => {
         setShowFirstInput(false);
+        handleCardSize(); // Add this line
     };
 
     const handleBackClick = () => {
         setShowFirstInput(true);
+
     };
 
-    const cardVariants = {
-        one: { opacity: 1, x: 0 },
-        two: { opacity: 0, x: -100, transition: { duration: 0.1 } }
+    const cardSizeVariants = {
+        one: { height: "185px" },
+        two: { height: "260px" }
     }
     
+    const handleCardSize = () => {
+        setShowFirstInput(false);
+    }
 
     return (
         <motion.div 
         style={{ boxShadow: "rgb(0 0 0 / 8%) 0px 8px 16px 0, inset 0 4px 4px -6px rgb(255 255 255 / 50%)" }}
-        layout className="bg-card rounded-xl shadow-md border border-stone-200 dark:border-stone-700 w-full max-w-[400px]">
+        layout 
+        variants={cardSizeVariants}
+        animate={showFirstInput ? "one" : "two"}
+        className="bg-card rounded-xl shadow-md border border-stone-200 dark:border-stone-700 w-full max-w-[400px]">
             <div className="flex flex-col gap-0 items-left overflow-hidden">
                 <div className="p-3 w-full"><h1 className="text-base font-normal tracking-tight">Create a new channel</h1></div>
                 
