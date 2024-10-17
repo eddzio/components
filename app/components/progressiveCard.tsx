@@ -36,20 +36,21 @@ export const ProgressiveCard = () => {
         layout 
         variants={cardSizeVariants}
         animate={showFirstInput ? "one" : "two"}
+        transition={{ duration: 0.3 }}
         className="bg-card rounded-xl shadow-md border border-stone-200 dark:border-stone-700 w-full max-w-[400px]">
             <div className="flex flex-col gap-0 items-left overflow-hidden">
                 <div className="p-3 w-full"><h1 className="text-base font-normal tracking-tight">Create a new channel</h1></div>
                 
-                <motion.div 
+                <motion.div layout
                 className="p-3 w-full flex flex-col gap-2 overflow-hidden">    
                     <AnimatePresence mode="wait">
                         {showFirstInput ? (
                             <motion.div
                             className="opacity-100"
                                 key="first"
-                                initial={{ opacity: 0, x: -20 }}
+                                initial={{ opacity: 0, x: -100 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -20, transition: { duration: 0.1 } }}
+                                exit={{ opacity: 0, x: -100, transition: { duration: 0.1 } }}
                                 transition={{ duration: 0.1 }}
                             >
                                 <TextInput label="First" placeholder="Type something" />
@@ -57,9 +58,9 @@ export const ProgressiveCard = () => {
                         ) : (
                             <motion.div
                                 key="second"
-                                initial={{ opacity: 0, x: 20 }}
+                                initial={{ opacity: 0, x: 100 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 20, transition: { duration: 0.1 } }}
+                                exit={{ opacity: 0, x: 100, transition: { duration: 0.1 } }}
                                 transition={{ duration: 0.1 }}
                             >
                                 <div className="flex flex-col gap-4">
