@@ -40,6 +40,17 @@ export default function Home() {
       <div
       className="flex flex-col gap-16 py-8"
       >
+
+{/* Progressive card */}
+          <motion.div
+          variants={itemVariants}
+          >
+            <Section title="Progressive card" description="A two-step dialog that changes to accommodate different types of input. Made with Framer Motion, Tailwind and React.">
+              <ProgressiveCard />
+            </Section>
+          </motion.div>
+
+{/* Quick menu */}
           <motion.div
           variants={itemVariants}
           >
@@ -48,13 +59,7 @@ export default function Home() {
             </Section>
           </motion.div>
 
-          <motion.div
-          variants={itemVariants}
-          >
-            <Section title="Progressive card" description="A two-step dialog that changes to accommodate different types of input. Made with Framer Motion, Tailwind and React.">
-              <ProgressiveCard />
-            </Section>
-          </motion.div>
+
           
  
 

@@ -32,7 +32,7 @@ const listItemStyle =
             bg-[background-color:var(--background)] 
             shadow-lg shadow-stone-800/10 dark:shadow-stone-950
             rounded-lg px-4 py-2 pl-1.5
-            hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors duration-150
+            hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors duration-100
             cursor-pointer
             border dark:border-stone-700 border-stone-200
             absolute top-4 left-4
@@ -42,7 +42,7 @@ const listItemStyle =
             
         >  
             <IconContainer icon="MagnifyingGlassIcon" />
-            <p className="text-[var(--label-primary)] text-base mx-auto text-center place-content-center h-full select-none">Toggle search</p>
+            <p className="text-[var(--label-primary)] text-base mx-auto text-center place-content-center h-full select-none">Open menu</p>
         </motion.button>
 
 
@@ -51,10 +51,10 @@ const listItemStyle =
                 {isOpen && (
                     <div className="flex items-center w-full h-full justify-center place-content-center z-50 px-8">
                         <motion.div
-                        initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 15, scale: 0.95 }}
-                        transition={{ type: "spring", mass: 1, stiffness: 240, damping: 20, duration: 0.1, staggerChildren: 0.05, delayChildren: 0.1 }}
+                        initial={{ opacity: 0, y: 10, scale: 0.97 }}
+                        animate={{ opacity: 1, y: 0, scale: 1, transition: { duration: 0.1 } }}
+                        exit={{ opacity: 0, y: 10, scale: 0.97 }}
+                        // transition={{ type: "spring", mass: 0.5, stiffness: 300, damping: 30, duration: 0.5, staggerChildren: 0.05, delayChildren: 0.1 }}
                         className="
                         place-self-center mx-auto 
                         items-center bg-stone-800 rounded-xl text-stone-50 mt-8
