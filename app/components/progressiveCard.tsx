@@ -19,10 +19,10 @@ export const ProgressiveCard = () => {
         setShowFirstInput(true);
     };
 
-    // const inputVariants = {
-    //     present: { opacity: 1, x: 0 },
-    //     exit: { opacity: 0, x: -100, transition: { duration: 0.1 } }
-    // }
+    const cardVariants = {
+        one: { opacity: 1, x: 0 },
+        two: { opacity: 0, x: -100, transition: { duration: 0.1 } }
+    }
     
 
     return (
