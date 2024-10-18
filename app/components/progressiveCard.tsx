@@ -2,11 +2,12 @@
 
 
 import React, { useState } from "react";
-import { motion, AnimatePresence, stagger } from "framer-motion";
+import { motion, AnimatePresence, stagger, spring } from "framer-motion";
 import { IconContainer } from "./iconContainer";
 import { ButtonPrimary } from "./buttonPrimary";
 import { ButtonSecondary } from "./buttonSecondary";
 import { TextInput } from "./textInput";
+import { useSpring } from "framer-motion"
 
 export const ProgressiveCard = () => {
     const [showFirstInput, setShowFirstInput] = useState(true);
@@ -14,35 +15,46 @@ export const ProgressiveCard = () => {
     const handleContinueClick = () => {
         setShowFirstInput(false);
         handleCardSize(); // Add this line
+
     };
 
     const handleBackClick = () => {
         setShowFirstInput(true);
-
     };
+
+
+    const handleCardSize = () => {
+        setShowFirstInput(false);
+    }
+
+
 
     const cardSizeVariants = {
         one: { height: "185px" },
         two: { height: "260px" }
     }
-    
-    const handleCardSize = () => {
-        setShowFirstInput(false);
-    }
+
+
+
+
 
     return (
         <motion.div 
-        style={{ boxShadow: "rgb(0 0 0 / 8%) 0px 8px 16px 0, inset 0 4px 4px -6px rgb(255 255 255 / 50%)" }}
-        layout 
         variants={cardSizeVariants}
         animate={showFirstInput ? "one" : "two"}
-        transition={{ duration: 0.3 }}
-        className="bg-card rounded-xl shadow-md border border-stone-200 dark:border-stone-700 w-full max-w-[400px]">
-            <div className="flex flex-col gap-0 items-left overflow-hidden">
-                <div className="p-3 w-full"><h1 className="text-base font-normal tracking-tight">Create a new channel</h1></div>
+        transition={{ spring: { stiffness: 100, damping: 10, mass: 1 }, duration: 0.1 }}
+        className="bg-card rounded-xl
+        border border-stone-200 dark:border-stone-700 w-full max-w-[400px]
+        flex flex-col justify-between overflow-hidden
+        items-left bg-red-500
+        ">
+
+                <div className="p-3 w-full">
+                    <h1 className="text-base font-normal tracking-tight">Create a new channel</h1>
+                    </div>
                 
                 <motion.div layout
-                className="p-3 w-full flex flex-col gap-2 overflow-hidden">    
+                className="p-3 w-full flex flex-col gap-2 ">    
                     <AnimatePresence mode="wait">
                         {showFirstInput ? (
                             <motion.div
@@ -73,7 +85,10 @@ export const ProgressiveCard = () => {
                 </motion.div>
 
                 
-                <div className="flex justify-start m-3 gap-3">
+                <motion.div 
+                animate={showFirstInput ? "first" : "second"}
+                transition={{ duration: 0.6 }}
+                className="flex justify-start m-3 gap-3">
                     <ButtonSecondary 
                         label="Go back" 
                         onClick={handleBackClick}
@@ -85,9 +100,9 @@ export const ProgressiveCard = () => {
                         
                     />
                 
-                </div>                
+                </motion.div>                
 
-            </div>
+
         </motion.div>
     );
 }
