@@ -37,7 +37,7 @@ export const ProgressiveCard = () => {
 
         variants={cardSizeVariants}
         animate={showFirstInput ? "one" : "two"}
-        transition={{ duration: 0.15 }}
+        transition={{ type: "spring", stiffness: 50, damping: 15, mass: 1 }}
         className="bg-card rounded-xl
         border border-stone-200 dark:border-stone-700 w-full max-w-[400px]
         flex flex-col justify-between overflow-hidden
