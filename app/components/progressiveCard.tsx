@@ -6,8 +6,7 @@ import { motion, AnimatePresence, stagger, spring } from "framer-motion";
 import { IconContainer } from "./iconContainer";
 import { ButtonPrimary } from "./buttonPrimary";
 import { ButtonSecondary } from "./buttonSecondary";
-import { TextInput } from "./textInput";
-import { useSpring } from "framer-motion"
+
 
 export const ProgressiveCard = () => {
     const [showFirstInput, setShowFirstInput] = useState(true);
@@ -24,8 +23,8 @@ export const ProgressiveCard = () => {
     };
 
     const cardSizeVariants = {
-        one: { height: "185px" },
-        two: { height: "260px" }
+        one: { height: "180px" },
+        two: { height: "230px" }
     }
 
 
@@ -37,7 +36,7 @@ export const ProgressiveCard = () => {
 
         variants={cardSizeVariants}
         animate={showFirstInput ? "one" : "two"}
-        transition={{ type: "spring", stiffness: 90, damping: 10, mass: 1, duration: 0.1 }}
+        transition={{ type: "spring", stiffness: 300, damping: 22, mass: 1, duration: 0.1 }}
         className="bg-card rounded-xl
         border border-stone-200 dark:border-stone-700 w-full max-w-[400px]
         flex flex-col justify-between overflow-hidden
@@ -58,7 +57,9 @@ export const ProgressiveCard = () => {
                                 initial={{ opacity: 0, x: -100 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -100, transition: { duration: 0.1 } }}
-                                transition={{ spring: { stiffness: 100, damping: 10, mass: 1 }, duration: 0.2 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 22, mass: 1, duration: 0.1 }}
+
+                                
                             >
                                 <p className="text-base text-stone-900 dark:text-stone-50">First screen</p>
                                 <p className="text-base text-stone-500 dark:text-stone-400">It's simple and not very tall.</p>
@@ -69,11 +70,15 @@ export const ProgressiveCard = () => {
                                 initial={{ opacity: 0, x: 100 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: 100, transition: { duration: 0.1 } }}
-                                transition={{ spring: { stiffness: 100, damping: 10, mass: 1 }, duration: 0.2 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 22, mass: 1, duration: 0.1 }}
                             >
 
                                 <p className="text-base text-stone-900 dark:text-stone-50">Second screen</p>
-                                <p className="text-base text-stone-500 dark:text-stone-400">This one is similar to the first one, but it it's taller.</p>
+                                <p className="text-base text-stone-500 dark:text-stone-400">
+                                    This one is similar to the first one, but it it's taller.
+                                    <br />
+                                    So it can accomodate more content.
+                                    </p>
                                 
 
 

@@ -13,7 +13,7 @@ const Section = ({title, description, children}) => {
     return (
         
         <motion.div 
-        className="flex flex-col gap-6">
+        className="flex flex-col gap-6 overflow-hidden">
             <div className="flex flex-col gap-1 place-content-center">
                 <p className="label-primary">{title}</p>
                 <p className="label-secondary">{description}</p>

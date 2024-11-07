@@ -45,7 +45,7 @@ export default function Home() {
 {/* Coins */}
           <Section 
           title="Coins" 
-          description="I've been experimenting with 3D modeling in Spline which allows you to easily export to Next.js. The model reacts to the cusor's position.">
+          description="I've been experimenting with 3D modeling in Spline which allows you to easily export to Next.js. The model reacts to the cusor's position. Drag the mouse to rotate. Pinch to zoom">
             <Coins />
           </Section>
 
