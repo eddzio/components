@@ -5,6 +5,7 @@ import PageHeader from "./components/pageHeader";
 import Section from "./components/section";
 import { QuickMenu } from "./components/quickMenu";
 import { ProgressiveCard } from "./components/progressiveCard";
+import { Coins } from "./components/coins";
 
 export default function Home() {
 
@@ -40,6 +41,13 @@ export default function Home() {
       <div
       className="flex flex-col gap-16 py-8"
       >
+
+{/* Coins */}
+          <Section 
+          title="Coins" 
+          description="I've been experimenting with 3D modeling in Spline which allows you to easily export to Next.js. The model reacts to the cusor's position.">
+            <Coins />
+          </Section>
 
 {/* Progressive card */}
           <motion.div
