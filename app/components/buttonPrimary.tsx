@@ -11,6 +11,7 @@ export const ButtonPrimary = ({ label, onClick }: { label: string, onClick: () =
             bg-orange-700
             hover:bg-orange-600
             label-button
+            text-white
             transition-colors duration-150
             ">
                 {label}

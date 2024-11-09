@@ -42,7 +42,7 @@ export default function Home() {
       className="flex flex-col gap-16 py-8"
       >
 
-{/* Coins */}
+{/* Coins
           <Section 
           title="3D Coins" 
           description="
@@ -52,7 +52,7 @@ export default function Home() {
           I applied different rotation speeds to further give the impression of a dense alloy.
           ">
             <Coins />
-          </Section>
+          </Section> */}
 
 {/* Progressive card */}
           <motion.div
