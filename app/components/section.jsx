@@ -14,14 +14,14 @@ const Section = ({title, description, children}) => {
         
         <motion.div 
         className="flex flex-col gap-6 overflow-hidden">
-            <div className="flex flex-col gap-1 place-content-center">
+            <div className="flex flex-col gap-1">
                 <p className="label-primary">{title}</p>
                 <p className="label-secondary max-w-xl">{description}</p>
             </div>
 
             <div className="
             flex items-center justify-center border border-dashed border-color 
-            h-[400px] w-full place-content-center rounded-[12px]
+            h-[400px] w-full rounded-[12px]
             bg-stone-100 dark:bg-stone-950 px-2
             overflow-hidden
             ">
