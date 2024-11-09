@@ -28,9 +28,6 @@ export const ProgressiveCard = () => {
     }
 
 
-
-
-
     return (
         <motion.div 
 
@@ -52,16 +49,15 @@ export const ProgressiveCard = () => {
                     <AnimatePresence mode="wait">
                         {showFirstInput ? (
                             <motion.div
-
                                 key="first"
                                 initial={{ opacity: 0, x: -100 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -100, transition: { duration: 0.1 } }}
                                 transition={{ type: "spring", stiffness: 300, damping: 22, mass: 1, duration: 0.1 }}
-
                                 
                             >
-                                <p className="text-base text-stone-900 dark:text-stone-50">First screen</p>
+                                {/* <p className="text-base text-stone-900 dark:text-stone-50">First screen</p> */}
+                                <p className="text-base text-stone-500 dark:text-stone-400">This is the first page. It's simple and not very tall.</p>
                                 <p className="text-base text-stone-500 dark:text-stone-400">It's simple and not very tall.</p>
                             </motion.div>
                         ) : (
@@ -69,19 +65,15 @@ export const ProgressiveCard = () => {
                                 key="second"
                                 initial={{ opacity: 0, x: 100 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 100, transition: { duration: 0.1 } }}
+                                // exit={{ opacity: 0, x: 100, transition: { duration: 0.1 } }}
                                 transition={{ type: "spring", stiffness: 300, damping: 22, mass: 1, duration: 0.1 }}
                             >
 
-                                <p className="text-base text-stone-900 dark:text-stone-50">Second screen</p>
+                                {/* <p className="text-base text-stone-900 dark:text-stone-50">Second screen</p> */}
                                 <p className="text-base text-stone-500 dark:text-stone-400">
-                                    This one is similar to the first one, but it it's taller.
-                                    <br />
-                                    So it can accomodate more content.
-                                    </p>
+                                    This is the second page. It's similar to the first one, but it it's taller. So it can accomodate more content.
+                                </p>
                                 
-
-
                             </motion.div>
                         )}
                     </AnimatePresence>
