@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, stagger } from "framer-motion";
 import { IconContainer } from "./iconContainer";
-import { ButtonSecondary } from "./buttonSecondary";
+import { ButtonPrimary } from "./buttonPrimary";
 
 
 
@@ -26,9 +26,9 @@ const listItemStyle =
         <div className="relative h-full w-full">
             
             <div className="m-6">
-            <ButtonSecondary
-            label="Toggle menu"
-            onClick={
+                <ButtonPrimary
+                label="Toggle menu"
+                onClick={
                 () => setIsOpen(isOpen => !isOpen)}            
             />
             </div>
