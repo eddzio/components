@@ -80,6 +80,13 @@ a:hover {
   color: var(--label-primary);
 }
 
+.label-button {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
 .label-secondary {
   color: var(--label-secondary);
 }

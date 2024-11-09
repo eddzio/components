@@ -89,7 +89,7 @@ export const ProgressiveCard = () => {
 
                 
                 <motion.div layout
-                className="flex justify-start m-3 gap-3"
+                className="flex justify-start m-3 gap-2"
                 >
                     <ButtonSecondary 
                         label="Go back" 
