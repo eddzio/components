@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, stagger } from "framer-motion";
 import { IconContainer } from "./iconContainer";
+import { ButtonSecondary } from "./buttonSecondary";
 
 
 
@@ -23,33 +24,20 @@ const listItemStyle =
     return (
 
         <div className="relative h-full w-full">
-        <motion.button 
-        whileTap={{ scale: 0.9 }}
-        onClick={
-            () => setIsOpen(isOpen => !isOpen)}
-
-            className="
-            bg-[background-color:var(--background)] 
-            shadow-lg shadow-stone-800/10 dark:shadow-stone-950
-            rounded-lg px-4 py-2 pl-1.5
-            hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors duration-100
-            cursor-pointer
-            border dark:border-stone-700 border-stone-200
-            absolute top-4 left-4
-            focus:outline-none
-            flex items-center gap-2
-            "
             
-        >  
-            <IconContainer icon="MagnifyingGlassIcon" />
-            <p className="text-[var(--label-primary)] text-base mx-auto text-center place-content-center h-full select-none">Open menu</p>
-        </motion.button>
+            <div className="m-6">
+            <ButtonSecondary
+            label="Toggle menu"
+            onClick={
+                () => setIsOpen(isOpen => !isOpen)}            
+            />
+            </div>
 
 
 
             <AnimatePresence>
                 {isOpen && (
-                    <div className="flex items-center w-full h-full justify-center place-content-center z-50 px-8">
+                    <div className="flex items-center w-full z-50 px-8">
                         <motion.div
                         initial={{ opacity: 0, y: 10, scale: 0.97 }}
                         animate={{ opacity: 1, y: 0, scale: 1, transition: { duration: 0.1 } }}
