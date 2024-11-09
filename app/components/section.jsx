@@ -16,7 +16,7 @@ const Section = ({title, description, children}) => {
         className="flex flex-col gap-6 overflow-hidden">
             <div className="flex flex-col gap-1 place-content-center">
                 <p className="label-primary">{title}</p>
-                <p className="label-secondary">{description}</p>
+                <p className="label-secondary max-w-xl">{description}</p>
             </div>
 
             <div className="

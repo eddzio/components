@@ -33,7 +33,7 @@ export default function Home() {
     animate="show"
     className="flex flex-col justify-center bg-[background-color:var(--background)] font-[family-name:var(--font-geist-sans)] px-4">
           
-      <main className="flex flex-col w-full max-w-4xl gap-8 mx-auto">
+      <main className="flex flex-col w-full max-w-3xl gap-8 mx-auto">
 
       <PageHeader />
 
@@ -44,8 +44,13 @@ export default function Home() {
 
 {/* Coins */}
           <Section 
-          title="Coins" 
-          description="I've been experimenting with 3D modeling in Spline which allows you to easily export to Next.js. The model reacts to the cusor's position. Drag the mouse to rotate. Pinch to zoom">
+          title="3D Coins" 
+          description="
+          I've been learning 3D modeling recently.
+          I made these coins with Spline which allowed me to export them into Next.js.
+          For the material of the coins, I wanted to make a shiny metal that looked heavy.
+          I applied different rotation speeds to further give the impression of a dense alloy.
+          ">
             <Coins />
           </Section>
 
