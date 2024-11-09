@@ -33,7 +33,7 @@ export const ProgressiveCard = () => {
 
         variants={cardSizeVariants}
         animate={showFirstInput ? "one" : "two"}
-        transition={{ type: "spring", stiffness: 300, damping: 30, mass: 1, duration: 0.1 }}
+        transition={{ type: "spring", stiffness: 500, damping: 30, mass: 1 }}
         className="bg-card rounded-xl
         border border-stone-200 dark:border-stone-700 w-full max-w-[400px]
         flex flex-col justify-between overflow-hidden
@@ -53,10 +53,10 @@ export const ProgressiveCard = () => {
                                 initial={{ opacity: 0, x: -100 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -100, transition: { duration: 0.1 } }}
-                                transition={{ type: "spring", stiffness: 300, damping: 30, mass: 1, duration: 0.1 }}
+                                transition={{ type: "spring", stiffness: 500, damping: 30, mass: 1}}
                                 
                             >
-                                {/* <p className="text-base text-stone-900 dark:text-stone-50">First screen</p> */}
+
                                 <p className="text-base text-stone-500 dark:text-stone-400">This is the first page. It's simple and not very tall.</p>
                                 <p className="text-base text-stone-500 dark:text-stone-400">It's simple and not very tall.</p>
                             </motion.div>
@@ -66,10 +66,10 @@ export const ProgressiveCard = () => {
                                 initial={{ opacity: 0, x: 100 }}
                                 animate={{ opacity: 1, x: 0 }}
 
-                                transition={{ type: "spring", stiffness: 300, damping: 30, mass: 1, duration: 0.1 }}
+                                transition={{ type: "spring", stiffness: 500, damping: 30, mass: 1}}
                             >
 
-                                {/* <p className="text-base text-stone-900 dark:text-stone-50">Second screen</p> */}
+
                                 <p className="text-base text-stone-500 dark:text-stone-400">
                                     This is the second page. It's similar to the first one, but it it's taller. So it can accomodate more content.
                                 </p>
