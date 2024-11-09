@@ -41,7 +41,7 @@ export const ProgressiveCard = () => {
         ">
 
                 <div className="p-3 w-full">
-                    <h1 className="text-base font-normal tracking-tight">Create a new channel</h1>
+                    <h1 className="text-base font-normal tracking-tight">Progressive card</h1>
                     </div>
                 
                 <motion.div
@@ -65,7 +65,7 @@ export const ProgressiveCard = () => {
                                 key="second"
                                 initial={{ opacity: 0, x: 100 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                // exit={{ opacity: 0, x: 100, transition: { duration: 0.1 } }}
+
                                 transition={{ type: "spring", stiffness: 300, damping: 30, mass: 1, duration: 0.1 }}
                             >
 
