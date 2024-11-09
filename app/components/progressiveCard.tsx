@@ -40,12 +40,10 @@ export const ProgressiveCard = () => {
         items-left bg-red-500
         ">
 
-                <div className="p-3 w-full">
-                    <h1 className="text-base font-normal tracking-tight">Progressive card</h1>
-                    </div>
+                <div className="p-3 w-full"><h1 className="text-base font-semibold tracking-tight">Progressive card</h1></div>
                 
                 <motion.div
-                className="p-3 w-full flex flex-col justify-between">    
+                className="p-3 w-full">    
                     <AnimatePresence mode="wait">
                         {showFirstInput ? (
                             <motion.div
@@ -54,7 +52,6 @@ export const ProgressiveCard = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -100, transition: { duration: 0.1 } }}
                                 transition={{ type: "spring", stiffness: 500, damping: 30, mass: 1}}
-                                
                             >
 
                                 <p className="text-base text-stone-500 dark:text-stone-400">This is the first page. It's simple and not very tall.</p>
