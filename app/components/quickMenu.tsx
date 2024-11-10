@@ -23,9 +23,9 @@ const listItemStyle =
 
     return (
 
-        <div className="relative h-full w-full">
+        <div className="flex flex-col h-full w-full">
             
-            <div className="m-6">
+            <div className="mx-auto mt-6">
                 <ButtonPrimary
                 label="Toggle menu"
                 onClick={
