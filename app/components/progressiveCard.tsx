@@ -37,7 +37,7 @@ export const ProgressiveCard = () => {
         className="bg-card rounded-xl
         border border-stone-200 dark:border-stone-700 w-full max-w-[400px]
         flex flex-col justify-between overflow-hidden
-        items-left bg-red-500
+        items-left bg-red-500 min-h-min
         ">
 
                 <div className="p-3 w-full"><h1 className="text-base font-semibold tracking-tight">Progressive card</h1></div>
