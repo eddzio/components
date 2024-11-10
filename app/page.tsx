@@ -12,14 +12,7 @@ export default function Home() {
 
   const containerVariants = {
     hidden: {opacity: 0, y: 20}, 
-    show: {
-    opacity: 1, 
-    y: 0, 
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
-    }, 
-    },
+    show: {opacity: 1, y: 0, transition: {delayChildren: 0.3, staggerChildren: 0.2}}
   }
 
   const itemVariants = {
@@ -37,7 +30,6 @@ export default function Home() {
       <main className="flex flex-col w-full max-w-3xl gap-8 mx-auto">
 
       <PageHeader />
-
 
       <div
       className="flex flex-col gap-16 py-8"
