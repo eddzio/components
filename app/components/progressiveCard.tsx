@@ -23,7 +23,7 @@ export const ProgressiveCard = () => {
     };
 
     const cardSizeVariants = {
-        one: { height: "auto" },
+        one: { height: "180px" },
         two: { height: "230px" }
     }
 
