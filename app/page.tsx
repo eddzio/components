@@ -6,6 +6,7 @@ import Section from "./components/section";
 import { QuickMenu } from "./components/quickMenu";
 import { ProgressiveCard } from "./components/progressiveCard";
 import { Coins } from "./components/coins";
+import { NewSlide } from "./components/newSlide";
 
 export default function Home() {
 
@@ -42,8 +43,15 @@ export default function Home() {
       className="flex flex-col gap-16 py-8"
       >
 
-{/* Coins
-          <Section 
+
+{/* New slide */}
+<Section title="New slide · work in progress"
+ description="Working on a prototype for a new slide page for a new feature I'm working on. I'm planning how the animation should look when the new slide page loads.">
+  <NewSlide />
+</Section>
+
+{/* Coins */}
+          {/* <Section 
           title="3D Coins" 
           description="
           I've been learning 3D modeling recently.
