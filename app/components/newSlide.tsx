@@ -2,29 +2,27 @@
 
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAnimate, stagger } from "framer-motion"
+
 
 const rowStyles = "card w-80 max-w-full h-16"
 
 const container = {
     hidden: {
         opacity: 0,
-        transition: {
-            staggerChildren: 0.5,
-        }
+        y: 10
+
     },
     whileInView: {
         opacity: 1,
+        y: 0,
         transition: {
-            staggerChildren: 0.5,
+            delayChildren: 0.7,
+            staggerChildren: 0.1,
 
         }
     },
-    exit: {
-        opacity: 0,
-        transition: {
-            staggerChildren: 0.5
-        }
-    }
+
 }
 
 const item = {
@@ -32,14 +30,14 @@ const item = {
         opacity: 0, 
         y: 10,
         transition: {
-            duration: 0.5
+            duration: 0.3
         }
     },
     whileInView: {
         opacity: 1, 
         y: 0,
         transition: {
-            duration: 0.5
+            duration: 0.3
         }
     }
 }
@@ -52,8 +50,12 @@ export const NewSlide = () => {
                 variants={container}
                 initial="hidden"
                 whileInView="whileInView"
-                exit="exit"
+                transition={{
+                    delay: 1
+                }}
+
             >
+                <motion.div className={rowStyles} variants={item}></motion.div>
                 <motion.div className={rowStyles} variants={item}></motion.div>
                 <motion.div className={rowStyles} variants={item}></motion.div>
                 <motion.div className={rowStyles} variants={item}></motion.div>
