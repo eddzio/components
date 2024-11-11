@@ -1,41 +1,63 @@
 "use client"
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const rowStyles = "card w-80 max-w-full h-16"
 
-const rowAnimation = {
-    hidden: {opacity: 0, y: 10}, 
-    show: {opacity: 1, y: 0, 
-        transition: {repeat: 3, repeatDelay: 1, rduration: 2, staggerChildren: 0.5, delayChildren: 1}}
+const container = {
+    hidden: {
+        opacity: 0,
+        transition: {
+            staggerChildren: 0.5,
+        }
+    },
+    whileInView: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.5,
 
+        }
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            staggerChildren: 0.5
+        }
+    }
 }
 
+const item = {
+    hidden: {
+        opacity: 0, 
+        y: 10,
+        transition: {
+            duration: 0.5
+        }
+    },
+    whileInView: {
+        opacity: 1, 
+        y: 0,
+        transition: {
+            duration: 0.5
+        }
+    }
+}
 
 export const NewSlide = () => {
     return (
-        <motion.div 
-        className="flex flex-col gap-3"
-        variants={rowAnimation}
-        initial="hidden"
-        animate="show"
-
-        
-        >
-
+        <AnimatePresence>
             <motion.div 
-            variants={rowAnimation}
-            className={rowStyles}></motion.div>
-
-            <motion.div 
-            variants={rowAnimation}
-            className={rowStyles}></motion.div>
-
-            <motion.div 
-            variants={rowAnimation}
-            className={rowStyles}></motion.div>
-
-        </motion.div>
+                className="flex flex-col gap-3"
+                variants={container}
+                initial="hidden"
+                whileInView="whileInView"
+                exit="exit"
+            >
+                <motion.div className={rowStyles} variants={item}></motion.div>
+                <motion.div className={rowStyles} variants={item}></motion.div>
+                <motion.div className={rowStyles} variants={item}></motion.div>
+            </motion.div>
+        </AnimatePresence>
     )
 }
