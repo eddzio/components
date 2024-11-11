@@ -7,6 +7,7 @@ import { QuickMenu } from "./components/quickMenu";
 import { ProgressiveCard } from "./components/progressiveCard";
 import { Coins } from "./components/coins";
 import { NewSlide } from "./components/newSlide";
+import { Blob } from "./components/blob";
 
 export default function Home() {
 
@@ -37,13 +38,25 @@ export default function Home() {
 
 
 {/* New slide */}
-<Section title="New slide · work in progress"
- description="Working on a prototype for a new slide page for a new feature I'm working on. I'm planning how the animation should look when the new slide page loads.">
+<Section title="Blob"
+ description="
+ WIP · playing around with the repeat property of Framer Motion.">
+  <Blob />
+</Section>
+
+
+{/* New slide */}
+<Section title="New slide"
+ description="
+ I was planning an animation that plays when a new page loads.
+ For this prototype, I used staggerChildren to orchestrate the animation of the cards.">
   <NewSlide />
 </Section>
 
+
+
 {/* Coins */}
-          {/* <Section 
+          <Section 
           title="3D Coins" 
           description="
           I've been learning 3D modeling recently.
@@ -52,7 +65,7 @@ export default function Home() {
           I applied different rotation speeds to further give the impression of a dense alloy.
           ">
             <Coins />
-          </Section> */}
+          </Section>
 
 {/* Progressive card */}
           <motion.div
