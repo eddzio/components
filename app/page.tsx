@@ -8,6 +8,7 @@ import { ProgressiveCard } from "./components/progressiveCard";
 import { Coins } from "./components/coins";
 import { NewSlide } from "./components/newSlide";
 import { Blob } from "./components/blob";
+import DatePicker from "./components/datePicker";   
 
 export default function Home() {
 
@@ -35,6 +36,13 @@ export default function Home() {
       <div
       className="flex flex-col gap-16 py-8"
       >
+
+
+{/* Date picker */}
+<Section title="Date picker"
+ description="Date picker I'm designing for a project in Zoios.">
+  <DatePicker />
+</Section>
 
 
 {/* New slide */}
