@@ -51,7 +51,7 @@ export const NewSlide = () => {
                 initial="hidden"
                 whileInView="whileInView"
                 transition={{
-                    delay: 1
+                    delay: 0.5
                 }}
 
             >

@@ -55,7 +55,6 @@ export const ProgressiveCard = () => {
                             >
 
                                 <p className="text-base text-stone-500 dark:text-stone-400">This is the first page. It's simple and not very tall.</p>
-                                <p className="text-base text-stone-500 dark:text-stone-400">It's simple and not very tall.</p>
                             </motion.div>
                         ) : (
                             <motion.div
