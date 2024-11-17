@@ -5,13 +5,13 @@ import { useState } from "react"
 
 
 
-const blobStyles = "bg-stone-800 shadow-xl rounded-full h-8"
+const blobStyles = "bg-stone-800 hover:shadow-xl h-8 hover:cursor-pointer"
 
 const blobVariants = {
-    default: { width: 128, height: 32 },
-    wide: { width: 256, height: 32 },
-    large: { width: 256, height: 64 },
-    card: { width: 256, height: 256 }
+    default: { width: 92, height: 32, borderRadius: "16px" },
+    wide: { width: 156, height: 32, borderRadius: "16px" },
+    large: { width: 256, height: 64, borderRadius: "64px" },
+    card: { width: 256, height: 312, borderRadius: "64px" }
 }
 
 export const Blob = () => {
@@ -25,14 +25,26 @@ export const Blob = () => {
     }
 
     return (
+        <div className="flex justify-center">
         <motion.div
             className={blobStyles}
             onClick={cycleVariant}
+            whileHover={{
+                scale: 1.1
+            }}
             animate={blobVariants[currentVariant]}
             transition={{
                 type: "spring",
-                damping: 13
+                damping: 30,
+                stiffness: 400
+            }}
+            style={{
+                filter: "blur(0px)"
+            }}
+            whileTap={{
+                filter: "blur(4px)"
             }}
         ></motion.div>
+        </div>
     )
 }
