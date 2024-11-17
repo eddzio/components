@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Playground",
-  description: "A space where I explore UI concepts",
+  title: "Components",
+  description: "A collection of UI experiments.",
 };
 
 export default function RootLayout({
