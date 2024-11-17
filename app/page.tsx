@@ -7,7 +7,7 @@ import { QuickMenu } from "./components/quickMenu";
 import { ProgressiveCard } from "./components/progressiveCard";
 import { Coins } from "./components/coins";
 import { NewSlide } from "./components/newSlide";
-import { Blob } from "./components/blob";
+import { DynamicBlob } from "./components/dynamicBlob";
 import DatePicker from "./components/datePicker";   
 
 export default function Home() {
@@ -39,17 +39,17 @@ export default function Home() {
 
 
 {/* Date picker */}
-<Section title="Date picker"
+{/* <Section title="Date picker"
  description="Date picker I'm designing for a project in Zoios.">
   <DatePicker />
-</Section>
+</Section> */}
 
 
 {/* New slide */}
-<Section title="Blob"
+<Section title="Dynamic blob"
  description="
- WIP · playing around with the repeat property of Framer Motion.">
-  <Blob />
+ Recreated the transitions of Apple's Dynamic Island. Click to cycle through the different sizes.">
+  <DynamicBlob />
 </Section>
 
 

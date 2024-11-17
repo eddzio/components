@@ -11,10 +11,10 @@ const blobVariants = {
     default: { width: 92, height: 32, borderRadius: "16px" },
     wide: { width: 156, height: 32, borderRadius: "16px" },
     large: { width: 256, height: 64, borderRadius: "64px" },
-    card: { width: 256, height: 312, borderRadius: "64px" }
+    card: { width: 256, height: 312, borderRadius: "56  px" }
 }
 
-export const Blob = () => {
+export const DynamicBlob = () => {
     const [currentVariant, setCurrentVariant] = useState<keyof typeof blobVariants>('default')
     
     const cycleVariant = () => {
