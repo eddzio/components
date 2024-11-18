@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Components",
+  title: "Components · Ed Orozco",
   description: "A collection of UI experiments.",
 };
 
