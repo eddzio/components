@@ -5,13 +5,13 @@ import { useState } from "react"
 
 
 
-const blobStyles = "bg-stone-800 hover:shadow-xl h-8 hover:cursor-pointer mx-auto"
+const blobStyles = "bg-stone-950 hover:shadow-xl h-8 hover:cursor-pointer mx-auto"
 
 const blobVariants = {
-    default: { width: 92, height: 32, borderRadius: "16px", marginTop: "10px" },
-    wide: { width: 164, height: 32, borderRadius: "16px", marginTop: "10px" },
-    large: { width: 280, height: 80, borderRadius: "64px", marginTop: "10px" },
-    card: { width: 192, height: 280, borderRadius: "56px", marginTop: "10px" }
+    default: { width: 92, height: 32, borderRadius: "16px" },
+    wide: { width: 164, height: 32, borderRadius: "16px" },
+    large: { width: 280, height: 80, borderRadius: "64px" },
+    card: { width: 192, height: 280, borderRadius: "56px" }
 }
 
 export const DynamicBlob = () => {
@@ -26,8 +26,10 @@ export const DynamicBlob = () => {
 
     return (
         <div className="
-        grid grid-cols-1 content-start align-center bg-slate-200 h-full
-        rounded-t-[50px] w-[312px] mt-8 border-t-2 border-l-2 border-r-2 border-stone-800
+        grid grid-cols-1 content-start align-center h-full
+        rounded-t-[52px] w-[312px] mt-12 pt-[12px] 
+        bg-stone-200 dark:bg-stone-600
+        border-t-4 border-x-4 border-stone-600 dark:border-stone-400
         ">
         <motion.div
             className={blobStyles}
