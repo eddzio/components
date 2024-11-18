@@ -8,10 +8,10 @@ import { useState } from "react"
 const blobStyles = "bg-stone-800 hover:shadow-xl h-8 hover:cursor-pointer mx-auto"
 
 const blobVariants = {
-    default: { width: 92, height: 32, borderRadius: "16px" },
-    wide: { width: 156, height: 32, borderRadius: "16px" },
-    large: { width: 256, height: 64, borderRadius: "64px" },
-    card: { width: 256, height: 312, borderRadius: "56px" }
+    default: { width: 92, height: 32, borderRadius: "16px", marginTop: "10px" },
+    wide: { width: 164, height: 32, borderRadius: "16px", marginTop: "10px" },
+    large: { width: 280, height: 80, borderRadius: "64px", marginTop: "10px" },
+    card: { width: 192, height: 280, borderRadius: "56px", marginTop: "10px" }
 }
 
 export const DynamicBlob = () => {
@@ -27,13 +27,13 @@ export const DynamicBlob = () => {
     return (
         <div className="
         grid grid-cols-1 content-start align-center bg-slate-200 h-full
-        rounded-t-[56px] pt-4 w-1/2 mt-8
+        rounded-t-[50px] w-[312px] mt-8 border-t-2 border-l-2 border-r-2 border-stone-800
         ">
         <motion.div
             className={blobStyles}
             onClick={cycleVariant}
             whileHover={{
-                scale: 1.1
+                scale: 1.02
             }}
             animate={blobVariants[currentVariant]}
             transition={{
