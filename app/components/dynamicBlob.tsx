@@ -36,14 +36,12 @@ export const DynamicBlob = () => {
             transition={{
                 type: "spring",
                 damping: 30,
-                stiffness: 400
-            }}
-            style={{
-                filter: "blur(0px)"
+                stiffness: 400,
             }}
             whileTap={{
                 filter: "blur(4px)"
             }}
+          
         ></motion.div>
         </div>
     )
