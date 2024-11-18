@@ -10,7 +10,7 @@ const blobStyles = "bg-stone-950 hover:shadow-xl h-8 hover:cursor-pointer mx-aut
 const blobVariants = {
     default: { width: 92, height: 32, borderRadius: "16px" },
     wide: { width: 164, height: 32, borderRadius: "16px" },
-    large: { width: 280, height: 80, borderRadius: "64px" },
+    large: { width: 270, height: 80, borderRadius: "64px" },
     card: { width: 192, height: 280, borderRadius: "56px" }
 }
 
@@ -27,9 +27,10 @@ export const DynamicBlob = () => {
     return (
         <div className="
         grid grid-cols-1 content-start align-center h-full
-        rounded-t-[52px] w-[312px] mt-12 pt-[12px] 
-        bg-stone-200 dark:bg-stone-600
-        border-t-4 border-x-4 border-stone-600 dark:border-stone-400
+        rounded-t-[56px] w-[312px] mt-12 pt-[12px] 
+        bg-card
+        border-color
+        border-t-8 border-x-8 
         ">
         <motion.div
             className={blobStyles}
