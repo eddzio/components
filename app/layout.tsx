@@ -17,6 +17,22 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Components · Ed Orozco",
   description: "A collection of UI experiments.",
+  openGraph: {
+    title: "Components · Ed Orozco",
+    description: "A collection of UI experiments.",
+    url: 'https://components.fun',
+    siteName: 'Components.fun',
+    images: [
+      {
+        url: '/og-image.png',  // Place this image in your public folder
+        width: 1200,
+        height: 630,
+        alt: 'Components.fun',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
