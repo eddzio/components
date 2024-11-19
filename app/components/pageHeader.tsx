@@ -14,7 +14,7 @@ const PageHeader = () => {
         animate="show"
         className="flex flex-col gap-1 pt-16">
         <h1>Components.fun</h1>
-        <h2>A space where I explore UI concepts</h2>
+        <h2>A collection of UI concepts and experiments.</h2>
         <p className="label-secondary">Made by <a href="https://bsky.app/profile/eddzio.bsky.social" target="_blank">@eddzio</a></p>
       </motion.div>   
     )
