@@ -2,16 +2,14 @@
 
 import Spline from '@splinetool/react-spline/next';
 
-export const Coins = () => {
+export default function Home() {
   return (
-    <main className="overflow-hidden">
-
- 
+    <main>
       <Spline
         scene="https://prod.spline.design/sIfU1ex6BS7QiVFy/scene.splinecode" 
       />
-
     </main>
   );
 }
+
 
