@@ -5,7 +5,7 @@ import PageHeader from "./components/pageHeader";
 import Section from "./components/section";
 import { QuickMenu } from "./components/quickMenu";
 import { ProgressiveCard } from "./components/progressiveCard";
-import { Coins } from "./components/coins";
+import Coins from "./components/coins";
 import { NewSlide } from "./components/newSlide";
 import { DynamicBlob } from "./components/dynamicBlob";
 import DatePicker from "./components/datePicker";   

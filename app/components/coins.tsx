@@ -2,7 +2,7 @@
 
 import Spline from '@splinetool/react-spline/next';
 
-export default function Home() {
+export default function Coins() {
   return (
     <main>
       <Spline
