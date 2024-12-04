@@ -8,7 +8,7 @@ import { ProgressiveCard } from "./components/progressiveCard";
 import Coins from "./components/coins";
 import { NewSlide } from "./components/newSlide";
 import { DynamicBlob } from "./components/dynamicBlob";
-import DatePicker from "./components/datePicker";   
+import EmployeesTable from "./components/EmployeesTable";
 
 export default function Home() {
 
@@ -38,15 +38,18 @@ export default function Home() {
       >
 
 
-{/* Date picker */}
-{/* <Section title="Date picker"
- description="Date picker I'm designing for a project in Zoios.">
-  <DatePicker />
-</Section> */}
+
+{/* Table */}
+<Section title="Table"
+ description="generated with Figma plugin.">
+  <div className="overflow-x-auto">
+    <EmployeesTable />
+  </div>
+</Section>
 
 
 {/* New slide */}
-<Section title="Dynamic blob"
+<Section title="Dynamic Island"
  description="
  Recreated the transitions of Apple's Dynamic Island. Click to cycle through the different sizes.">
   <DynamicBlob />
