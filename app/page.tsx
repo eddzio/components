@@ -39,9 +39,9 @@ export default function Home() {
 
 
 
-{/* Table */}
-<Section title="Table"
- description="generated with Figma plugin.">
+{/* Table component */}
+<Section title="Table component"
+ description="This component started as a Figma design that I then converted to code using Meng To's Figma to AI Code plugin. I then used Cursor to add sorting by column, partial selection, and some styling.">
   <div className="overflow-x-auto">
     <EmployeesTable />
   </div>
