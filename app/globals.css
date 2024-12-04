@@ -5,8 +5,8 @@
 :root {
   /* --background: #ffffff;
   --foreground: #171717; */
-  --accent-primary: #f5855c;
-  --accent-primary-hover: #ee7245;
+  --accent: #f5855c;
+  --accent-hover: #ee7245;
 }
 
 
@@ -19,6 +19,7 @@
     --label-tertiary: #a8a29e;
     --border: #d6d3d1;
     --bg-card: #fafaf9;
+
   }
 }
 
@@ -67,12 +68,12 @@ p, li {
 }
 
 a {
-  color: var(--accent-primary);
+  color: var(--accent);
   /* @apply focus:outline-orange-600 focus:outline-2; */
 }
 
 a:hover {
-  color: var(--accent-primary-hover);
+  color: var(--accent-hover);
   text-decoration: underline;
 }
 
@@ -105,6 +106,59 @@ a:hover {
 
 .bg-card {
   background-color: var(--bg-card);
+}
+.rounded-card {
+  border-radius: 12px;
+}
+.rounded-button {
+  border-radius: 8px;
+}
+input[type="checkbox"] {
+  width: 24px;                         /* Set width */
+  height: 24px;                        /* Set height */
+  border-radius: 6px;                  /* Add rounded corners */
+  appearance: none;                    /* Remove default appearance */
+  border: 2px solid var(--border);     /* Add border */
+  background-color: var(--bg-card);    /* Match background */
+  position: relative;                  /* For pseudo-element positioning */
+  cursor: pointer;                     /* Show pointer cursor */
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--accent);     /* Use accent color when checked */
+  border-color: var(--accent);         /* Match border to accent when checked */
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 7px;                         /* Position the checkmark */
+  top: 3px;
+  width: 6px;                         /* Size of the checkmark */
+  height: 12px;
+  border: solid white;                /* White checkmark */
+  border-width: 0 2px 2px 0;         /* Create checkmark shape */
+  transform: rotate(45deg);           /* Rotate to checkmark angle */
+}
+
+/* Add styles for indeterminate state */
+input[type="checkbox"]:indeterminate {
+  background-color: var(--accent);    /* Use accent color */
+  border-color: var(--accent);        /* Match border to accent */
+}
+
+input[type="checkbox"]:indeterminate::after {
+  content: '';
+  position: absolute;
+  left: 4px;                         /* Position the checkmark */
+  top: 9px;
+  width: 12px;                         /* Size of the checkmark */
+  height: 2px;                      /* Height of the dash */
+  background-color: white;           /* White dash */
+}
+
+.bg-accent {
+  background-color: var(--accent);
 }
 
 .border-color {
