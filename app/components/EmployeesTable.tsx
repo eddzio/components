@@ -1,5 +1,16 @@
-import React, { useRef, useEffect } from 'react';
-import { ArrowDown, Check, ChevronRight, Minus } from 'lucide-react';
+import React, { useRef, useEffect, useState } from 'react';
+import { ArrowDown, Check, ChevronRight, Minus, ArrowUp } from 'lucide-react';
+
+type Employee = {
+  name: string;
+  email: string;
+  status: string;
+  age: number;
+  department: string;
+  defaultContact: boolean;
+};
+
+type SortDirection = 'asc' | 'desc' | null;
 
 const EmployeesTable: React.FC = () => {
   const cellStyle = "px-4 py-3 text-left label-secondary";
@@ -7,6 +18,14 @@ const EmployeesTable: React.FC = () => {
   const [selectedRows, setSelectedRows] = React.useState<boolean[]>([false, false]);
 
   const headerCheckboxRef = useRef<HTMLInputElement>(null);
+
+  const [sortColumn, setSortColumn] = useState<keyof Employee>('name');
+  const [sortDirection, setSortDirection] = useState<SortDirection>(null);
+
+  const [employees] = useState<Employee[]>([
+    { name: 'Sarah Chen', email: 'sarah.chen@acme.co', status: 'Active', age: 34, department: 'Engineering', defaultContact: true },
+    { name: 'Marcus Rodriguez', email: 'm.rodriguez@acme.co', status: 'On Leave', age: 29, department: 'Product', defaultContact: false },
+  ]);
 
   useEffect(() => {
     if (headerCheckboxRef.current) {
@@ -26,6 +45,34 @@ const EmployeesTable: React.FC = () => {
     ));
   };
 
+  const handleSort = (column: keyof Employee) => {
+    if (sortColumn === column) {
+      setSortDirection(current => (current === 'asc' ? 'desc' : 'asc'));
+    } else {
+      setSortColumn(column);
+      setSortDirection('asc');
+    }
+  };
+
+  const getSortedEmployees = () => {
+    if (!sortDirection) return employees;
+
+    return [...employees].sort((a, b) => {
+      const aValue = a[sortColumn];
+      const bValue = b[sortColumn];
+
+      if (sortDirection === 'asc') {
+        return aValue < bValue ? -1 : 1;
+      } else {
+        return aValue > bValue ? -1 : 1;
+      }
+    });
+  };
+
+  const sortedEmployees = getSortedEmployees();
+
+  const headerTextStyle = "label-secondary hover:text-[var(--label-primary)] font-medium";
+
   return (
     <div className="bg-card rounded-2xl border border-color pb-0.5">
 
@@ -38,34 +85,8 @@ const EmployeesTable: React.FC = () => {
           <p className="label-secondary">Add or remove employees and modify the data of existing ones.</p>
         </div>
 
-        <div className="mt-4 flex justify-between items-center">
-          
-          {/* toolbar */}
-          {/* <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <select className="h-10 px-2 border border-color rounded-lg bg-white label-secondary">
-                <option>Default contact</option>
-              </select>
-              <select className="h-10 px-2 border border-color rounded-lg bg-white label-secondary">
-                <option>Segments</option>
-              </select>
-            </div>
-
-            <div className="h-10 w-px bg-[#E2E8F0]" />
-
-            <div className="flex items-center space-x-2">
-              <button className="h-10 px-4 border border-color rounded-lg bg-white text-[#1E293B] font-medium">
-                Cancel
-              </button>
-              <button className="h-10 px-4 bg-[#1E293B] text-white rounded-lg font-medium">
-                Apply change
-              </button>
-            </div>
-          </div> */}
 
 
-
-        </div>
       </div>
 
       {/* Table */}
@@ -82,64 +103,93 @@ const EmployeesTable: React.FC = () => {
                   onChange={(e) => handleSelectAll(e.target.checked)}
                 />
               </th>
-              <th className={cellStyle}>
-                <div className="flex items-center space-x-1">
-                  <span className="label-secondary font-medium">Name</span>
-                  <ArrowDown size={14} className="label-secondary" />
-                </div>
+              <th className={`${cellStyle} min-w-[160px]`}>
+                <button 
+                  onClick={() => handleSort('name')}
+                  className="flex items-center space-x-1 group hover:text-foreground"
+                >
+                  <span className="label-secondary hover:text-[var(--label-primary)] font-medium">Name</span>
+                  {sortColumn === 'name' ? 
+                    (sortDirection === 'asc' ? <ArrowUp size={14} /> : <ArrowDown size={14} />) : 
+                    <ArrowDown size={14} className="opacity-0" />}
+                </button>
               </th>
-              <th className={cellStyle}>
-                <span className="label-secondary font-medium">Email</span>
+              <th className={`${cellStyle} min-w-[200px]`}>
+                <button 
+                  onClick={() => handleSort('email')}
+                  className="flex items-center space-x-1 group hover:text-foreground"
+                >
+                  <span className={headerTextStyle}>Email</span>
+                  {sortColumn === 'email' ? 
+                    (sortDirection === 'asc' ? <ArrowUp size={14} /> : <ArrowDown size={14} />) : 
+                    <ArrowDown size={14} className="opacity-0" />}
+                </button>
               </th>
-              <th className={cellStyle}>
-                <span className="label-secondary font-medium">Status</span>
+              <th className={`${cellStyle} min-w-[120px]`}>
+                <button 
+                  onClick={() => handleSort('status')}
+                  className="flex items-center space-x-1 group hover:text-foreground"
+                >
+                  <span className={headerTextStyle}>Status</span>
+                  {sortColumn === 'status' ? 
+                    (sortDirection === 'asc' ? <ArrowUp size={14} /> : <ArrowDown size={14} />) : 
+                    <ArrowDown size={14} className="opacity-0" />}
+                </button>
               </th>
-              <th className={cellStyle}>
-                <span className="label-secondary font-medium">Age</span>
+              <th className={`${cellStyle} min-w-[100px]`}>
+                <button 
+                  onClick={() => handleSort('age')}
+                  className="flex items-center space-x-1 group hover:text-foreground"
+                >
+                  <span className={headerTextStyle}>Age</span>
+                  {sortColumn === 'age' ? 
+                    (sortDirection === 'asc' ? <ArrowUp size={14} /> : <ArrowDown size={14} />) : 
+                    <ArrowDown size={14} className="opacity-0" />}
+                </button>
               </th>
-              <th className={cellStyle}>
-                <span className="label-secondary font-medium">Department</span>
+              <th className={`${cellStyle} min-w-[140px]`}>
+                <button 
+                  onClick={() => handleSort('department')}
+                  className="flex items-center space-x-1 group hover:text-foreground"
+                >
+                  <span className={headerTextStyle}>Department</span>
+                  {sortColumn === 'department' ? 
+                    (sortDirection === 'asc' ? <ArrowUp size={14} /> : <ArrowDown size={14} />) : 
+                    <ArrowDown size={14} className="opacity-0" />}
+                </button>
               </th>
-              <th className={cellStyle}>
-                <span className="label-secondary font-medium">Default contact</span>
+              <th className={`${cellStyle} min-w-[160px]`}>
+                <button 
+                  onClick={() => handleSort('defaultContact')}
+                  className="flex items-center space-x-1 group hover:text-foreground"
+                >
+                  <span className={headerTextStyle}>Default contact</span>
+                  {sortColumn === 'defaultContact' ? 
+                    (sortDirection === 'asc' ? <ArrowUp size={14} /> : <ArrowDown size={14} />) : 
+                    <ArrowDown size={14} className="opacity-0" />}
+                </button>
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-color">
-              <td className="p-4">
-                <input 
-                  type="checkbox" 
-                  className={checkboxStyle}
-                  checked={selectedRows[0]}
-                  onChange={(e) => handleSelectRow(0, e.target.checked)}
-                />
-              </td>
-              <td className={cellStyle}>John Doe</td>
-              <td className={cellStyle}>john.doe@example.com</td>
-              <td className={cellStyle}>Active</td>
-              <td className={cellStyle}>32</td>
-              <td className={cellStyle}>Engineering</td>
-              <td className={cellStyle}>Yes</td>
-            </tr>
-            <tr className="">
-              <td className="p-4">
-                <input 
-                  type="checkbox" 
-                  className={checkboxStyle}
-                  checked={selectedRows[1]}
-                  onChange={(e) => handleSelectRow(1, e.target.checked)}
-                />
-              </td>
-              <td className={cellStyle}>Jane Smith</td>
-              <td className={cellStyle}>jane.smith@example.com</td>
-              <td className={cellStyle}>Active</td>
-              <td className={cellStyle}>28</td>
-              <td className={cellStyle}>Design</td>
-              <td className={cellStyle}>No</td>
-            </tr>
-            
-            
+            {sortedEmployees.map((employee, index) => (
+              <tr key={employee.email} className={index === sortedEmployees.length - 1 ? "" : "border-b border-color"}>
+                <td className="p-4">
+                  <input 
+                    type="checkbox" 
+                    className={checkboxStyle}
+                    checked={selectedRows[index]}
+                    onChange={(e) => handleSelectRow(index, e.target.checked)}
+                  />
+                </td>
+                <td className={cellStyle}>{employee.name}</td>
+                <td className={cellStyle}>{employee.email}</td>
+                <td className={cellStyle}>{employee.status}</td>
+                <td className={cellStyle}>{employee.age}</td>
+                <td className={cellStyle}>{employee.department}</td>
+                <td className={cellStyle}>{employee.defaultContact ? 'Yes' : 'No'}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
