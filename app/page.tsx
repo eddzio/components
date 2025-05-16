@@ -9,6 +9,7 @@ import Coins from "./components/coins";
 import { NewSlide } from "./components/newSlide";
 import { DynamicBlob } from "./components/dynamicBlob";
 import EmployeesTable from "./components/EmployeesTable";
+import LoadingIndicator from "./components/loadingIndicator";
 
 export default function Home() {
 
@@ -44,6 +45,13 @@ export default function Home() {
  description="This component started as a Figma design that I then converted to code using Meng To's Figma to AI Code plugin. I then used Cursor to add sorting by column, partial selection, and some styling.">
   <div className="overflow-x-auto">
     <EmployeesTable />
+  </div>
+</Section>
+
+<Section title="CSS Loading Indicator"
+ description="Basic loader to explore animating SVG paths with CSS.">
+  <div className="overflow-x-auto">
+    <LoadingIndicator />
   </div>
 </Section>
 
