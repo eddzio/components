@@ -4,9 +4,6 @@ import React from "react";
 
 // Framer motion
 import { motion } from "framer-motion";
-import { div } from "framer-motion/client";
-import { useInView } from 'framer-motion';
-import { animate, stagger } from "framer-motion";
 
 
 const Section = ({title, description, children}) => {

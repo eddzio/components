@@ -10,6 +10,7 @@ import { NewSlide } from "./components/newSlide";
 import { DynamicBlob } from "./components/dynamicBlob";
 import EmployeesTable from "./components/EmployeesTable";
 import LoadingIndicator from "./components/loadingIndicator";
+import PNGAnimation from "./components/pngAnimation";
 
 export default function Home() {
 
@@ -41,6 +42,11 @@ export default function Home() {
 
 
 {/* Table component */}
+<Section title="Empty state illustration"
+ description="I designed this as an empty state illustration for a feature in Zoios called Groups. Because of the grows and transparency, I ended up using PNGs instead of SVGs. I used Framer Motion with the spring function for the animation.">
+  <div><PNGAnimation /></div>
+</Section>
+
 <Section title="Table component"
  description="This component started as a Figma design that I then converted to code using Meng To's Figma to AI Code plugin. I then used Cursor to add sorting by column, partial selection, and some styling.">
   <div className="overflow-x-auto">
@@ -48,12 +54,6 @@ export default function Home() {
   </div>
 </Section>
 
-<Section title="CSS Loading Indicator"
- description="Basic loader to explore animating SVG paths with CSS.">
-  <div className="overflow-x-auto">
-    <LoadingIndicator />
-  </div>
-</Section>
 
 
 {/* New slide */}
