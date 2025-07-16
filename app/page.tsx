@@ -10,7 +10,7 @@ import { NewSlide } from "./components/newSlide";
 import { DynamicBlob } from "./components/dynamicBlob";
 import EmployeesTable from "./components/EmployeesTable";
 import LoadingIndicator from "./components/loadingIndicator";
-import PNGAnimation from "./components/pngAnimation";
+import PNGAnimation from "./components/UserAnimation";
 
 export default function Home() {
 

@@ -25,6 +25,9 @@ const RotatingPNG: React.FC<{ delay?: number; direction?: "left" | "right"; styl
                     : direction === "right"
                     ? 12
                     : -12,
+                y: toggled ? 0 : -20,
+                marginLeft: toggled ? -24 : 0,
+                marginRight: toggled ? -24 : 0,
                 transition: { ...spring, delay },
             });
             toggled = !toggled;
@@ -46,8 +49,8 @@ const RotatingPNG: React.FC<{ delay?: number; direction?: "left" | "right"; styl
 
 const PNGAnimation: React.FC = () => (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <RotatingPNG direction="left" style={{ marginRight: -16, opacity: 0.8 }} />
-        <RotatingPNG direction="right" style={{ marginLeft: -16, opacity: 0.7 }} />
+        <RotatingPNG direction="left" style={{ marginRight: -24, opacity: 0.8 }} />
+        <RotatingPNG direction="right" style={{ marginLeft: -24, opacity: 0.7 }} />
     </div>
 );
 
