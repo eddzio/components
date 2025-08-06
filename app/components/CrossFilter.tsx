@@ -15,7 +15,7 @@ export default function CrossFilter() {
   return (
     <div className="flex items-start gap-4 w-[320px]">
       {/* first filter pinned left */}
-      <div className="relative">
+      <div className="relative z-10">
         <select
           value={selectedFirst}
           onChange={e => setSelectedFirst(e.target.value)}
@@ -34,7 +34,7 @@ export default function CrossFilter() {
       <AnimatePresence mode="wait">
         {showSecondDropdown ? (
           <motion.div
-            className="flex items-center gap-4"
+            className="flex items-center gap-4 z-0"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
