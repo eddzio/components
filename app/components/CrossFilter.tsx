@@ -14,7 +14,6 @@ export default function CrossFilter() {
 
   return (
     <div className="flex items-center gap-4">
-
       <motion.div
         className="relative"
         layout
@@ -35,16 +34,13 @@ export default function CrossFilter() {
           </svg>
         </span>
       </motion.div>
-      
-      
-
-      <AnimatePresence>
-        {showSecondDropdown && (
+      <AnimatePresence mode="wait">
+        {showSecondDropdown ? (
           <motion.div
             className="flex items-center gap-4"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 0 }}
+            exit={{ opacity: 0, x: 40 }}
             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
             key="second-dropdown"
           >
@@ -65,7 +61,7 @@ export default function CrossFilter() {
                 </svg>
               </span>
             </div>
-{/* close button */}
+            {/* close button */}
             <motion.button
               type="button"
               aria-label="Remove filter"
@@ -82,20 +78,21 @@ export default function CrossFilter() {
               </svg>
             </motion.button>
           </motion.div>
+        ) : (
+          <motion.button
+            type="button"
+            onClick={() => setShowSecondDropdown(true)}
+            className='rounded-lg shadow-sm bg-orange-600 text-white font-mono tracking-tighter px-4 py-2 hover:bg-orange-500 hover:shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-stone-800 ring-offset-2'
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 40 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+            key="add-filter-btn"
+          >
+            Add filter
+          </motion.button>
         )}
       </AnimatePresence>
-
-
-{/* Add filter button */}
-      {!showSecondDropdown && (
-        <button
-          type="button"
-          onClick={() => setShowSecondDropdown(true)}
-          className='rounded-lg shadow-sm bg-orange-600 text-white font-mono tracking-tighter px-4 py-2 hover:bg-orange-500 hover:shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-stone-800 ring-offset-2'
-        >
-          Add filter
-        </button>
-      )}
     </div>
   );
 }
