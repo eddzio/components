@@ -11,6 +11,7 @@ import { DynamicBlob } from "./components/dynamicBlob";
 import EmployeesTable from "./components/EmployeesTable";
 import LoadingIndicator from "./components/loadingIndicator";
 import PNGAnimation from "./components/UserAnimation";
+import FilterDropdown from "./components/FilterDropdown";
 
 export default function Home() {
 
@@ -41,12 +42,21 @@ export default function Home() {
 
 
 
-{/* Table component */}
+{/* Secondary filter */}
+<Section title="Cross-filtering dropdowns"
+ description="Pending....">
+  <div><FilterDropdown /></div>
+</Section>
+
+
+{/* Empty state */}
 <Section title="Empty state illustration"
  description="I designed this as an empty state illustration for a feature in Zoios called Groups. Because of the grows and transparency, I ended up using PNGs instead of SVGs. I used Framer Motion with the spring function for the animation.">
   <div><PNGAnimation /></div>
 </Section>
 
+
+{/* Table component */}
 <Section title="Table component"
  description="This component started as a Figma design that I then converted to code using Meng To's Figma to AI Code plugin. I then used Cursor to add sorting by column, partial selection, and some styling.">
   <div className="overflow-x-auto">
