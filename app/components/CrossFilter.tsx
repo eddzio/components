@@ -6,7 +6,7 @@ const options = [
   { value: 'option3', label: 'Option 3' },
 ];
 
-export default function FilterDropdown() {
+export default function CrossFilter() {
   const [showSecondDropdown, setShowSecondDropdown] = useState(false);
   const [selectedFirst, setSelectedFirst] = useState(options[0].value);
   const [selectedSecond, setSelectedSecond] = useState(options[0].value);

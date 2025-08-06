@@ -11,7 +11,7 @@ import { DynamicBlob } from "./components/dynamicBlob";
 import EmployeesTable from "./components/EmployeesTable";
 import LoadingIndicator from "./components/loadingIndicator";
 import PNGAnimation from "./components/UserAnimation";
-import FilterDropdown from "./components/FilterDropdown";
+import CrossFilter from "./components/CrossFilter";
 
 export default function Home() {
 
@@ -45,7 +45,7 @@ export default function Home() {
 {/* Secondary filter */}
 <Section title="Cross-filtering dropdowns"
  description="Pending....">
-  <div><FilterDropdown /></div>
+  <div><CrossFilter /></div>
 </Section>
 
 
