@@ -44,7 +44,7 @@ export default function Home() {
 
 {/* Secondary filter */}
 <Section title="Cross-filtering dropdowns"
- description="Pending....">
+ description="An optional secondary dropdown that allows you to cross-filter data. This came up as a concept for a cross-filtering feature we were working on at Zoios.">
   <div><CrossFilter /></div>
 </Section>
 
