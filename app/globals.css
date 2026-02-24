@@ -170,3 +170,12 @@ input[type="checkbox"]:indeterminate::after {
     text-wrap: balance;
   }
 }
+
+@keyframes heartbeat {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 0.8s ease-in-out infinite;
+}
