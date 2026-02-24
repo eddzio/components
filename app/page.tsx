@@ -12,6 +12,7 @@ import EmployeesTable from "./components/EmployeesTable";
 import LoadingIndicator from "./components/loadingIndicator";
 import PNGAnimation from "./components/UserAnimation";
 import CrossFilter from "./components/CrossFilter";
+import { Translation } from "./components/translation";
 
 export default function Home() {
 
@@ -40,6 +41,13 @@ export default function Home() {
       className="flex flex-col gap-16 py-8"
       >
 
+
+
+{/* Translation */}
+<Section title="Social comment translation"
+ description="A social media comment card with a language toggle button. Click the button to cycle through English, Spanish, French, Italian, and Danish.">
+  <Translation />
+</Section>
 
 
 {/* Secondary filter */}
