@@ -13,6 +13,7 @@ import LoadingIndicator from "./components/loadingIndicator";
 import PNGAnimation from "./components/UserAnimation";
 import CrossFilter from "./components/CrossFilter";
 import { Translation } from "./components/translation";
+import NestedSelect from "./components/NestedSelect";
 
 export default function Home() {
 
@@ -41,6 +42,14 @@ export default function Home() {
       className="flex flex-col gap-16 py-8"
       >
 
+
+
+{/* Nested select */}
+<Section title="Nested select"
+ description="A two-panel nested selection component with country-level and location-level checkboxes, partial selection states, and a searchable location list."
+ containerClassName="!h-[520px] !p-0">
+  <NestedSelect />
+</Section>
 
 
 {/* Translation */}
